@@ -1,6 +1,7 @@
 package entity;
 //entity layer
 import java.io.Serializable;
+import java.util.Date;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -25,14 +26,14 @@ public class PurchaseDetails implements Serializable
 	private String cname;
 	private String mailId;
 	private String phoneno;
-	private String purchasedate;
+	private Date purchasedate=new Date();
 	//OneToOne mapping
 	@OneToOne(cascade=CascadeType.ALL)
 	//foreign key
 	@JoinColumn(name="mobileid",referencedColumnName="mobileid")
 	private MobileDetails mobiles;
 	//parameterised constructor
-	public PurchaseDetails(int id,String name,String maid,String ph,String da,MobileDetails md)
+	public PurchaseDetails(int id,String name,String maid,String ph,Date da,MobileDetails md)
 	{
 		this.purchase_id=id;
 		this.cname=name;
@@ -71,10 +72,10 @@ public class PurchaseDetails implements Serializable
 	public void setPhoneno(String phoneno) {
 		this.phoneno = phoneno;
 	}
-	public String getPurchasedate() {
+	public Date getPurchasedate() {
 		return purchasedate;
 	}
-	public void setPurchasedate(String purchasedate) {
+	public void setPurchasedate(Date purchasedate) {
 		this.purchasedate = purchasedate;
 	}
 	public MobileDetails getMobiles() {
