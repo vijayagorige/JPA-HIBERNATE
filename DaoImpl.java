@@ -155,7 +155,6 @@ public class DaoImpl {
 	        System.out.println("Enter mobile id to find");
 	        mobileid=sc.nextLine();
 			md=em.find(MobileDetails.class,mobileid);
-	        sc.nextLine();
 	        System.out.println("Enter mobile quantity to update");
 	        quantity=sc.nextInt();
 	        md.setMobileid(mobileid);
