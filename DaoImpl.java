@@ -158,7 +158,6 @@ public class DaoImpl {
 	        md.setMobileid(mobileid);
 	        md.setQuantity(quantity);
 	        System.out.println(md);
-	        System.out.println(pd);
 	        //saving transaction
 			em.getTransaction().commit();
 			System.out.println("Record Updated Successfully");
