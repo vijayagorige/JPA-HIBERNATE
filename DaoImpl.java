@@ -1,5 +1,6 @@
 package dao;
 import java.util.List;
+import java.util.Date;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -21,7 +22,7 @@ public class DaoImpl {
     	String cname;
     	String mailId;
         String phoneno;
-        String purchasedate;
+        Date purchasedate=new Date(); 
         MobileDetails mobiles;
 		Scanner sc=new Scanner(System.in);
 		//insert method
@@ -123,9 +124,6 @@ public class DaoImpl {
             {
             	e.printStackTrace();
             }
-            System.out.println("Enter date of purchase");
-            purchasedate=sc.nextLine();
-            pd.setPurchasedate(purchasedate);
             pd.setMobiles(md);
             em.persist(md);
             em.persist(pd);
